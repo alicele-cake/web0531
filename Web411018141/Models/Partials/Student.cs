@@ -18,9 +18,9 @@ namespace Web411018141.Models
         }
         [Required(ErrorMessage ="請填寫姓名")]
         [Display(Name="姓名")]
-        [StringLength(10,ErrorMessage ="請勿超過10個字串")]
+        [StringLength(5,MinimumLength =2,ErrorMessage ="請勿超過10個字串")]
 
-        public string Name
+        public string Username
         {
             get; set;
         }
@@ -35,6 +35,12 @@ namespace Web411018141.Models
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email
+        {
+            get; set;
+        }
+        [Required(ErrorMessage = "必填欄位")]
+        [Display(Name = "是否註冊")]
+        public bool isActive
         {
             get; set;
         }
